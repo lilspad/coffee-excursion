@@ -2,16 +2,53 @@
     90% {
         background-color: #130C09;
         background-image: none;
-        box-shadow: 0 0.75px 0.5px 0.25px #E1D8D1 inset;    
+        box-shadow: 0.5px 0.5px 2px 0.25px #E1D8D1 inset,
+            0 1px 2px 0.5px black;    
     }
 
-    91% {
-        background-image: radial-gradient(rgb(17, 255, 0), rgb(187, 252, 187));
-        box-shadow: 0 0 5px 1px rgba(17, 255, 0, 0.555);
+    100% {
+        background-image: radial-gradient(#e6ff00, #ebf777);
+        box-shadow: 0 0 5px 2px #e5ff00,
+        0.5px 0.5px 2px 0.25px #E1D8D1 inset,
+        0 1px 2px 0.5px black;
     }
 }
 
-@keyframes turn {
+@keyframes turn-left {
+    0% {
+            transform: rotate(90deg);
+            box-shadow:
+                -3px 0px 3px #5E554E inset,
+                -5px 0px 2px #8E857C inset,
+                0.75px 0px 0.5px 0.25px #E1D8D1 inset,
+                -5.5px 0px 0.5px #E1D8D1 inset,
+                25px -10px 20px 0px rgba(27, 14, 6, 0.4),
+                0 1px 1px 1.5px #D7CEC7;
+        }
+
+    50% {
+        box-shadow:
+            0 -1.5px 3px #5E554E inset,
+            0 -2.5px 2px #8E857C inset,
+            0 0.5px 0.5px 0.25px #E1D8D1 inset,
+            0 -2.75px 0.5px #E1D8D1 inset,
+            18px 7.5px 20px 0px rgba(27, 14, 6, 0.4),
+            0 0.5px 1px 1.5px #D7CEC7;
+    }
+
+    100% {
+        transform: rotate(0);
+        box-shadow:
+            0 -3px 3px #5E554E inset,
+            0 -5px 2px #8E857C inset,
+            0 0.75px 0.5px 0.25px #E1D8D1 inset,
+            0 -5.5px 0.5px #E1D8D1 inset,
+            10px 25px 20px 0px rgba(27, 14, 6, 0.4),
+            0 1px 1px 1.5px #D7CEC7;
+    }
+}
+
+@keyframes turn-right {
     0% {
         transform: rotate(0);
         box-shadow: 
@@ -47,15 +84,13 @@
 
 @keyframes shine {
     0% {
-        background-position-x: 100%;
+        background-size: 100% 100%;
     }
-    
     50% {
-        background-position-x: 0%;
+        background-size: 200% 200%;
     }
-
     100% {
-        background-position-x: 100%;
+        background-size: 100% 100%;
     }
 }
 
@@ -115,22 +150,26 @@
 
 @keyframes light {
     0% {
-        opacity: 0.6;
-        text-shadow: 1px 1px 1px black;;
+        color:#272727;
+        text-shadow: 0px 1px 1px black;;
     }
     100% {
-        opacity: 1;
+        color: white;
         text-shadow: 1px 1px 1px black,
         0 0 10px white;
     }
 }
 
 .light {
-    animation: blink 5s 3s infinite;
+    animation: blink 5s infinite;
 }
 
-.knob:active {
-    animation: turn 1s linear 1 alternate forwards;
+.knob {
+    animation: turn-left 1s linear 1 both;
+}
+
+.knob:focus {
+    animation: turn-right 1s linear 1 both;
 }
 
 .head-button:hover {
@@ -138,7 +177,7 @@
     animation: 0.5s shine linear 1 alternate;
 }
 
-.head-button:active {
+.head-button:focus {
     animation: press 0.2s 1;
     border-style: outset;
 }
