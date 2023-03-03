@@ -7,24 +7,22 @@ header {
     position: relative;
     min-width: 1600px;
     max-width: 95vw;
-    height: 210px;
+    height: 150px;
     margin: auto;
     background-color: #EFEFE7;
     background-image: 
         linear-gradient(90deg, 
-        #c2bda6 2%, 
+        #bcb8a8 2%, 
         #e4e1d5 5%, 
         #EFEFE7 15%,
         #EFEFE7 85%, 
-        #d8d5c6 95%, 
-        #c2bda6 98%
+        #e4e1d5 95%, 
+        #bcb8a8 98%
         );
     box-shadow: 
         0 -2px 2px -0.5px #D0CCC1 inset,
-
         0 3px 1px #FBFAF8 inset,
-        0 45px 10px -25px rgba(0, 0, 0, 0.1),
-        0 65px 50px -10px rgba(0, 0, 0, 0.05);
+        10px 10px 15px 1px black;
     border-radius: 15% 15% 10% 10%;
 }
 
@@ -35,7 +33,7 @@ header {
     border-radius: 120px;
     background-image: linear-gradient(#CDC4BD, #CCC3BC, #D1C4BC);
     position: absolute;
-    top: 50px;
+    top: 15px;
     left: 85px;
     box-shadow: 
         0 -3px 3px #5E554E inset,
@@ -61,7 +59,7 @@ header {
     border-radius: 15px;
     position: absolute;
     left: 250px;
-    top: 150px;
+    top: 50px;
     background-color: #130C09;
     box-shadow: 0.5px 0.5px 2px 0.25px #E1D8D1 inset,
     0 1px 2px 0.5px black;
@@ -81,7 +79,7 @@ header {
 .head {
     position: absolute;
     width: 280px;
-    height: 140px;
+    height: 100px;
     border-radius: 10% 10% 40% 40%;
     background-color: black;
     left: 375px;
@@ -94,7 +92,8 @@ header {
     content: '';
     position: absolute;
     width: 280px;
-    height: 140px;
+    height: 105px;
+    top: 8px;
     border-radius: 10% 10% 40% 40%;
     background-color: rgb(34, 34, 34);
     box-shadow: 0 2px 2px -0.5px #D0CCC1 inset,
@@ -108,21 +107,21 @@ header {
 .head-icons {
     display: flex;
     justify-content: space-around;
-    width: 260px;
+    width: 240px;
     height: 20px;
 }
 
 .head-icon {
     color: white;
     margin-top: 15px;
-    margin-left: 20px;
+    margin-left: 38px;
     z-index: 10;
     text-shadow: 2px 2px 0 black;
 }
 
 .head-icon.double {
     position: relative;
-    left: -15px;
+    left: -18px;
 }
 
 .head-icon.double i {
@@ -138,10 +137,10 @@ i.second {
     position: absolute;
     display: flex;
     justify-content: space-around;
-    width: 250px;
-    height: 50px;
-    top: 60px;
-    left: 25px;
+    width: 230px;
+    height: 40px;
+    top: 45px;
+    left: 35px;
 }
 
 .head-button {
@@ -166,18 +165,18 @@ i.second {
     display: block;
     position: absolute;
     width: 300px;
-    height: 165px;
+    height: 125px;
     border-radius: 5px;
     background-color: black;
     right: 130px;
-    top: 20px;
+    top: 12px;
     box-shadow: 2px 1px 2px 1px rgba(78, 74, 74, 0.567);
 }
 
 .screen-display {
     display: block;
     width: 260px;
-    height: 130px;
+    height: 95px;
     background-image: radial-gradient(#060924, #021b22);
     position: absolute;
     top: 10px;
