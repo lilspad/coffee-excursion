@@ -34,7 +34,7 @@ header {
     background-image: linear-gradient(#CDC4BD, #CCC3BC, #D1C4BC);
     position: absolute;
     top: 15px;
-    left: 85px;
+    left: 100px;
     box-shadow: 
         0 -3px 3px #5E554E inset,
         0 -5px 2px #8E857C inset,
@@ -76,13 +76,18 @@ header {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
+.heads-container {
+    position: relative;
+    width: 800px;
+    margin: auto;
+}
+
 .head {
     position: absolute;
     width: 280px;
     height: 100px;
     border-radius: 10% 10% 40% 40%;
     background-color: black;
-    left: 375px;
     top: 25px;
     padding: 10px;
     box-shadow: 2px 1px 2px 1px rgba(78, 74, 74, 0.567);
@@ -101,7 +106,7 @@ header {
 }
 
 .head.two {
-    left: 750px;
+    left: 350px;
 }
 
 .head-icons {
