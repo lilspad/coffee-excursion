@@ -1,0 +1,182 @@
+@keyframes blink {
+    90% {
+        background-color: #130C09;
+        background-image: none;
+        box-shadow: 0 0.75px 0.5px 0.25px #E1D8D1 inset;    
+    }
+
+    91% {
+        background-image: radial-gradient(rgb(17, 255, 0), rgb(187, 252, 187));
+        box-shadow: 0 0 5px 1px rgba(17, 255, 0, 0.555);
+    }
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0);
+        box-shadow: 
+        0 -3px 3px #5E554E inset,
+        0 -5px 2px #8E857C inset,
+        0 0.75px 0.5px 0.25px #E1D8D1 inset,
+        0 -5.5px 0.5px #E1D8D1 inset,
+        10px 25px 20px 0px rgba(27, 14, 6, 0.4),
+        0 1px 1px 1.5px #D7CEC7;
+    }
+
+    50% {
+        box-shadow: 
+        0 -1.5px 3px #5E554E inset,
+        0 -2.5px 2px #8E857C inset,
+        0 0.5px 0.5px 0.25px #E1D8D1 inset,
+        0 -2.75px 0.5px #E1D8D1 inset,
+        18px 7.5px 20px 0px rgba(27, 14, 6, 0.4),
+        0 0.5px 1px 1.5px #D7CEC7;
+    }
+
+    100% {
+        transform: rotate(90deg);
+        box-shadow: 
+        -3px 0px 3px #5E554E inset,
+        -5px 0px 2px #8E857C inset,
+        0.75px 0px 0.5px 0.25px #E1D8D1 inset,
+        -5.5px 0px 0.5px #E1D8D1 inset,
+        25px -10px 20px 0px rgba(27, 14, 6, 0.4),
+        0 1px 1px 1.5px #D7CEC7;
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position-x: 100%;
+    }
+    
+    50% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+@keyframes press {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translateY(1px);
+        box-shadow: 0 3px 2px 1px #ffffff inset;
+    }
+}
+
+@keyframes turn-on {
+    0% {
+        background-color: black;
+        opacity: 1;
+    }
+    55% {
+        background-color: black;
+    }
+    74% {
+        background-color: rgb(10, 9, 59);
+        background-image: none;
+        opacity: 1;
+    }
+    75% {
+        background-color: black;
+    }
+    76% {
+        background-image: linear-gradient( 90deg,
+            #00ff37,
+            #ff00fb,
+            #00f7ff,
+            #fffb00,
+            #6a00ff
+        );
+        background-color: black;
+        opacity: 1;
+    }
+    77% {
+        background-color: black;
+        background-image: none;
+        opacity: 1;
+    }
+    80% {
+        background-color: white;
+        background-image: none;
+        opacity: 1;
+    }
+    100% {
+        background-color: black;
+        background-image: none;
+        opacity: 0;
+    }
+}
+
+@keyframes light {
+    0% {
+        opacity: 0.6;
+        text-shadow: 1px 1px 1px black;;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 1px 1px 1px black,
+        0 0 10px white;
+    }
+}
+
+.light {
+    animation: blink 5s 3s infinite;
+}
+
+.knob:active {
+    animation: turn 1s linear 1 alternate forwards;
+}
+
+.head-button:hover {
+    
+    animation: 0.5s shine linear 1 alternate;
+}
+
+.head-button:active {
+    animation: press 0.2s 1;
+    border-style: outset;
+}
+
+.screen-display::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    z-index: 10;
+    animation: turn-on 3s 1 forwards;
+}
+
+.head-icon {
+    animation: light 0.4s ease-out 2.6s 1 both;
+}
+
+.gradient-tracking span {
+    position: relative;
+}
+
+.gradient-tracking::after {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle farthest-side, #ffffff1f, #00ff151e, transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+}
+
+.gradient-tracking:hover::after {
+    --size: 50px;
+}
