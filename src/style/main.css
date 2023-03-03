@@ -9,6 +9,11 @@ html {
 body {
     background-color: #8a89c0;
 }
+
+.hidden {
+    display: none;
+}
+
 .slideshow-container {
     position: relative;
     width: 100vw;
@@ -43,6 +48,7 @@ body {
 .coffee-card h3 {
     font-size: 2rem;
     width: 300px;
+    height: 40px;
     padding: 10px;
     text-align: center;
 }
@@ -76,26 +82,6 @@ body {
 }
 
 .coffee-card.two {
-    width: 800px;
-    height: 520px;
-    padding: 10px 60px;
-    background-image: url('../media/scattered-beans.jpg');
-    background-size: 200%;
-    background-repeat: no-repeat;
-    background-position: 35% 50%;
-}
-
-.coffee-card.two p {
-    width: 50%;
-    margin-top: -5px;
-}
-
-.coffee-card.two p.right {
-    margin-left: 340px;
-    margin-top: -25px;
-}
-
-.coffee-card.three {
     width: 500px;
     height: 550px;
     padding: 40px;
@@ -105,16 +91,43 @@ body {
     background-position: 52% 40%;
 }
 
-.coffee-card.three p {
+.coffee-card.two h3 {
+    margin: auto;
+}
+
+.coffee-card.two p {
     width: 60%;
     margin: auto;
     padding: 40px;
     margin-top: 110px;
 }
 
+
+.coffee-card.three {
+    width: 800px;
+    height: 500px;
+    padding: 10px;
+    background-image: url('../media/scattered-beans.jpg');
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: 52% 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coffee-card.three p {
+    width: 35%;
+    padding: 20px;
+    margin: 20px;
+}
+
 .coffee-card.three h3 {
+    width: 80%;
     margin: auto;
 }
+
 
 .coffee-card.four {
     width: 800px;
