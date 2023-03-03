@@ -11,10 +11,17 @@ header {
     margin: auto;
     background-color: #EFEFE7;
     background-image: 
-        linear-gradient(90deg, #EFEFE7, #F4F3EE);
+        linear-gradient(90deg, 
+        #c2bda6 2%, 
+        #e4e1d5 5%, 
+        #EFEFE7 15%,
+        #EFEFE7 85%, 
+        #d8d5c6 95%, 
+        #c2bda6 98%
+        );
     box-shadow: 
         0 -2px 2px -0.5px #D0CCC1 inset,
-        2px 0 2px -0.5px #E1DFE0 inset,
+
         0 3px 1px #FBFAF8 inset,
         0 45px 10px -25px rgba(0, 0, 0, 0.1),
         0 65px 50px -10px rgba(0, 0, 0, 0.05);
@@ -162,7 +169,7 @@ i.second {
     height: 165px;
     border-radius: 5px;
     background-color: black;
-    right: 150px;
+    right: 130px;
     top: 20px;
     box-shadow: 2px 1px 2px 1px rgba(78, 74, 74, 0.567);
 }
