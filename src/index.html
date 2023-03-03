@@ -14,15 +14,45 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
-<body>
+<body id="body">
 <header>
     <div class="machine-top">
-        <button class="knob">
+
+        <div class="knob-icons">
+            <p class="off"><i class="fa-regular fa-circle"></i></p>
+            <p class="on"><i class="fa-solid fa-bars-staggered"></i></p>
+        </div>
+        <button class="knob" id="knob">
             <div class="inner"></div>
         </button>
 
-        <div class="light">
+        <div class="light" id="light">
         </div>
+
+        <!-- handle knob events -->
+        <script type="text/javascript">
+            const knob = document.getElementById('knob');
+            const light = document.getElementById('light');
+            const icons = document.getElementsByClassName('head-icon');
+
+            knob.addEventListener('focusin', () => {
+                light.style.animation = 'none';
+                light.style.backgroundImage = 'radial-gradient(#e6ff00, #ebf777)';
+                light.style.boxShadow = '0 0 5px 2px #e5ff00, 0.5px 0.5px 2px 0.25px #E1D8D1 inset, 0 1px 2px 0.5px black';
+                for (let i =0; i < icons.length; i ++) {
+                    icons[i].style.animation = 'light 0.4s ease-out 0s 1 reverse both';
+                };
+            })
+
+            knob.addEventListener('focusout', () => {
+                light.style.animation = 'blink 5s infinite';
+                light.style.backgroundImage = 'none';
+                light.style.boxShadow = '0.5px 0.5px 2px 0.25px #E1D8D1 inset, 0 1px 2px 0.5px black';
+                for (let i = 0; i < icons.length; i++) {
+                    icons[i].style.animation = 'light 0.4s ease-out 0s 1 normal both';
+                };
+            })
+        </script>
 
         <div class="heads-container">
             <div class="head">
@@ -52,6 +82,20 @@
                     <button class="head-button"></button>
                 </div>
             </div>
+
+            <script type="text/javascript">
+                const headButtons = document.getElementsByClassName('head-button');
+                let currentIcon;
+
+                const handleHeadClick = () => {
+                    currentIcon.style.color = 'red';
+                }
+                
+                for (let i = 0; i < headButtons.length; i++) {
+                    currentIcon = icons[i];
+                    headButtons[i].addEventListener('click', handleHeadClick());
+                }
+            </script>
         </div>
 
         <div class="screen-container">
@@ -62,6 +106,8 @@
                     <a class="button"><i class="fa-solid fa-screwdriver-wrench"></i><br></a>
                 </nav>
                 <p id="clock" onload="showTime()"></p>
+
+                <!-- Clock and screen events -->
                 <script type="text/javascript">
                     function showTime() {
                         var today = new Date();
