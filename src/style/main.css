@@ -2,10 +2,13 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+html {
+    width: 100vw;
+}
+
 body {
     background-color: #8a89c0;
 }
-
 .slideshow-container {
     position: relative;
     width: 100vw;
