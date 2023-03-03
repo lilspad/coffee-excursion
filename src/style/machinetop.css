@@ -26,6 +26,34 @@ header {
     border-radius: 15% 15% 10% 10%;
 }
 
+.knob-icons::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #EFEFE7;
+    border-top: 1px solid black;
+    border-radius: 100%;
+    transform: rotate(45deg);
+    left: 110px;
+    top: 15px;
+}
+
+.knob-icons .off {
+    position: absolute;
+    left: 146px;
+    top: 5px;
+    font-size: 0.5rem;
+}
+
+.knob-icons .on {
+    position: absolute;
+    left: 210px;
+    top: 67px;
+    font-size: 0.5rem;
+}
+
 .knob {
     display: block;
     width: 100px;
@@ -33,7 +61,7 @@ header {
     border-radius: 120px;
     background-image: linear-gradient(#CDC4BD, #CCC3BC, #D1C4BC);
     position: absolute;
-    top: 25px;
+    top: 28px;
     left: 100px;
     box-shadow: 
         0 -3px 3px #5E554E inset,

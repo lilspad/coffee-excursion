@@ -153,6 +153,10 @@
         color:#272727;
         text-shadow: 0px 1px 1px black;;
     }
+    50% {
+        color:#272727;
+        text-shadow: 0px 1px 1px black;;
+    }
     100% {
         color: white;
         text-shadow: 1px 1px 1px black,
@@ -196,7 +200,7 @@
 }
 
 .head-icon {
-    animation: light 0.4s ease-out 2.6s 1 both;
+    animation: light 0.2s ease-out 2.6s 3 alternate both;
 }
 
 .gradient-tracking span {
