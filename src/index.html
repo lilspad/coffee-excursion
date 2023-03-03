@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/machinetop.css">
+    <link rel="stylesheet" href="style/animations.css">
+    <script src="https://kit.fontawesome.com/349bd4180c.js" crossorigin="anonymous"></script>
+    <title>Grind Keepers</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+
+<body>
+<header>
+    <div class="machine-top">
+        <div class="knob">
+            <div class="inner"></div>
+        </div>
+
+        <div class="light">
+        </div>
+
+        <div class="head">
+            <div class="head-icons">
+                <div class="head-icon"><i class="fa-solid fa-mug-saucer"></i></div>
+                <div class="head-icon double"><i class="fa-solid fa-mug-saucer second"></i><i
+                        class="fa-solid fa-mug-saucer first"></i></div>
+                <div class="head-icon"><i class="fa-solid fa-droplet"></i></div>
+            </div>
+            <div class="head-buttons">
+                <button class="head-button"></button>
+                <button class="head-button"></button>
+                <button class="head-button"></button>
+            </div>
+        </div>
+
+        <div class="head two">
+            <div class="head-icons">
+                <div class="head-icon"><i class="fa-solid fa-mug-saucer"></i></div>
+                <div class="head-icon double"><i class="fa-solid fa-mug-saucer second"></i><i
+                        class="fa-solid fa-mug-saucer first"></i></div>
+                <div class="head-icon"><i class="fa-solid fa-droplet"></i></div>
+            </div>
+            <div class="head-buttons">
+                <button class="head-button"></button>
+                <button class="head-button"></button>
+                <button class="head-button"></button>
+            </div>
+        </div>
+
+        <div class="screen-container">
+            <div class="screen-display gradient-tracking"">
+                <nav class="menu-buttons">
+                    <a class="button"><i class="fa-solid fa-mug-hot"></i></i><br></a>
+                    <a class="button"><i class="fa-solid fa-book-open"></i><br></a>
+                    <a class="button"><i class="fa-solid fa-screwdriver-wrench"></i><br></a>
+                </nav>
+                <p id="clock" onload="showTime()"></p>
+                <script type="text/javascript">
+                    function showTime() {
+                        var today = new Date();
+                        var y = today.getFullYear();
+                        var mo = (today.getMonth() + 1);
+                        var d = today.getDate();
+                        var h = today.getHours(); // 0 - 23
+                        var m = today.getMinutes(); // 0 - 59
+                        var s = today.getSeconds(); // 0 - 59
+
+                        mo = (mo < 10) ? "0" + mo : mo;
+                        d = (d < 10) ? "0" + d : d;
+
+                        h = (h < 10) ? "0" + h : h;
+                        m = (m < 10) ? "0" + m : m;
+                        s = (s < 10) ? "0" + s : s;
+
+                        var time = d + "/" + mo + "/" + y + " " + h + ":" + m + ":" + s;
+                        document.getElementById("clock").innerText = time;
+                        document.getElementById("clock").textContent = time;
+
+                        setTimeout(showTime, 1000);
+                    }
+
+                    showTime();
+
+                    let btn = document.querySelector('.gradient-tracking');
+                        btn.addEventListener('mousemove', e => {
+                            let rect = e.target.getBoundingClientRect();
+                            let x = e.clientX - rect.left;
+                            let y = e.clientY - rect.top;
+                            btn.style.setProperty('--x', x + 'px');
+                            btn.style.setProperty('--y', y + 'px');
+                        });
+                </script>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+
+</main>
+</body>
+
+</html>
