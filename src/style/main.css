@@ -1,3 +1,143 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 body {
     background-color: #8a89c0;
+}
+
+.coffee-card {
+    margin: 100px auto;
+    background-color: #EFEFE7;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px 1px black;
+    color: #1e0f02;
+}
+
+.coffee-card h3 {
+    font-size: 2rem;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+}
+
+.coffee-card p {
+    padding: 40px;
+}
+
+.coffee-card h3,
+.coffee-card p {
+    border: 3px solid #e6ff00;
+    background-color: white;
+}
+
+.coffee-card.one {
+    width: 700px;
+    height: 500px;
+    padding: 10px 50px;
+    background-image: url('../media/bean-path.jpg');
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+}
+
+.right {
+    margin-left: 350px;
+}
+
+.coffee-card.one p {
+    width: 60%;
+}
+
+.coffee-card.two {
+    width: 800px;
+    height: 520px;
+    padding: 10px 60px;
+    background-image: url('../media/scattered-beans.jpg');
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 35% 50%;
+}
+
+.coffee-card.two p {
+    width: 50%;
+    margin-top: -5px;
+}
+
+.coffee-card.two p.right {
+    margin-left: 340px;
+    margin-top: -25px;
+}
+
+.coffee-card.three {
+    width: 500px;
+    height: 600px;
+    padding: 50px;
+    background-image: url('../media/bean-circle.jpg');
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: 52% 40%;
+}
+
+.coffee-card.three p {
+    width: 60%;
+    margin: auto;
+    padding: 40px;
+    margin-top: 130px;
+}
+
+.coffee-card.three h3 {
+    margin: auto;
+}
+
+.coffee-card.four {
+    width: 800px;
+    height: 450px;
+    padding: 20px 60px;
+    background-image: url('../media/ground-beans.jpg');
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+}
+
+.coffee-card.four h3,
+.coffee-card.four p {
+    margin-left: 40%;
+}
+
+.coffee-card.five {
+    width: 700px;
+    height: 600px;
+    padding: 10px 60px;
+    background-image: url('../media/drip.jpg');
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: 90% 90%;
+}
+
+.coffee-card.five p {
+    margin-top: 30px;
+}
+
+.coffee-card.five p.right {
+    width: 300px;
+    margin-left: 315px;
+}
+
+.coffee-card.five h3 {
+    margin-left: 375px;
+}
+
+.coffee-card.six {
+    width: 800px;
+    height: 500px;
+    padding: 20px 60px;
+    background-image: url('../media/bean-to-cup.jpg');
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: 35% 35%;
+}
+
+.coffee-card.six p {
+    width: 60%;
 }
