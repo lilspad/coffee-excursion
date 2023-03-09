@@ -34,15 +34,9 @@ body {
     height: 100%;
 }
 
-.coffee-card {
+.card-outer {
+    width: fit-content;
     margin: auto;
-    background-color: #EFEFE7;
-    border-radius: 15px;
-    box-shadow: 
-    2px -2px 2px -0.5px #D0CCC1 inset,
-    2px 3px 1px #FBFAF8 inset,
-    10px 10px 15px 1px black;
-    color: #1e0f02;
 }
 
 .coffee-card h3 {
@@ -63,14 +57,24 @@ body {
     background-color: white;
 }
 
+.front, 
+.back,
+.coffee-card {
+    margin: auto;
+    background-color: #EFEFE7;
+    border-radius: 15px;
+    box-shadow: 
+    2px -2px 2px -0.5px #D0CCC1 inset,
+    2px 3px 1px #FBFAF8 inset,
+    10px 10px 15px 1px black;
+    color: #1e0f02;
+}
+
 .coffee-card.one {
     width: 700px;
     height: 500px;
     padding: 10px 50px;
-    background-image: url('../media/bean-path.jpg');
-    background-size: 120%;
-    background-repeat: no-repeat;
-    background-position: 50% 80%;
+    
 }
 
 .right {
@@ -78,8 +82,98 @@ body {
 }
 
 .coffee-card.one p {
-    width: 60%;
+    width: 55%;
+    margin-left: 50px;
 }
+
+.one .back h3 {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.coffee-card.one .marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    position: absolute;
+    transition: background-color 0.4s;
+}
+
+.marker a {
+    display: block;
+    color: black;
+    background-color: white;
+    border: 1px solid #e6ff00;
+    border-radius: 50px 40px 40px 0px;
+    width: fit-content;
+    padding: 10px;
+    margin-top: -30px;
+    margin-left: 15px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.marker:hover {
+    background-color: #e6ff00;
+}
+
+.marker:hover a {
+    opacity: 1;
+}
+
+.sa {
+    background-color: #04804A;
+}
+
+.af {
+    background-color: #FFFFB1;
+}
+
+.as {
+    background-color: #8a89c0;
+}
+
+.hon {
+    top: 270px;
+    left: 200px;
+}
+
+.col {
+    top: 310px;
+    left: 215px;
+}
+
+.braz {
+    top: 350px;
+    left: 275px;
+}
+
+.eth {
+    top: 315px;
+    right: 290px;
+}
+
+.ug {
+    top: 340px;
+    right: 310px;
+}
+
+.ind {
+    top: 190px;
+    right: 200px;
+}
+
+.vie {
+    top: 250px;
+    right: 200px;
+}
+
+.indo {
+    top: 280px;
+    right: 210px;
+}
+
 
 .coffee-card.two {
     width: 500px;

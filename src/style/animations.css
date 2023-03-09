@@ -164,6 +164,7 @@
     }
 }
 
+
 .light {
     animation: blink 5s infinite;
 }
@@ -222,4 +223,50 @@
 
 .gradient-tracking:hover::after {
     --size: 50px;
+}
+
+.card-outer {
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.coffee-card {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.card-outer:hover .coffee-card {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+    
+}
+
+.front {
+    background-image: url('../media/bean-path.jpg');
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-image: url('../media/coffee-map.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
