@@ -1,9 +1,16 @@
 * {
     font-family: 'Courier New', Courier, monospace;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 html {
     width: 100vw;
+    overflow: hidden;
 }
 
 body {
@@ -14,11 +21,75 @@ body {
     display: none;
 }
 
+.card {
+    margin: auto;
+    background-color: #EFEFE7;
+    border-radius: 15px;
+    box-shadow: 
+    2px -2px 2px -0.5px #D0CCC1 inset,
+    2px 3px 1px #FBFAF8 inset,
+    10px 10px 15px 1px black;
+    color: #1e0f02;
+}
+
+.card h3 {
+    font-size: 2rem;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+}
+
+.card p {
+    padding: 40px;
+}
+
+.card h3,
+.card p {
+    border: 3px solid #e6ff00;
+    background-color: white;
+}
+
+.about-coffea {
+    position: relative;
+    height: 650px;
+    width: 1500px;
+    overflow: hidden;
+    margin-top: 50px;
+    background-color: #1e0f02;
+}
+
+.about-coffea h3,
+.about-coffea p {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.flower {
+    right: -250px;
+    top: -350px;
+    transform: rotate(-30deg);
+}
+
+.cherries {
+    left: -50px;
+    bottom: -300px;
+    transform: rotate(-55deg);
+}
+
+.about-coffea img {
+    position: absolute;
+    width: auto;
+    height: 170%;
+}
+
 .slideshow-container {
     position: relative;
     width: 100vw;
     height: 80vh;
     overflow: scroll;
+    scroll-snap-type: x mandatory;
     padding-top: 60px;
 }
 
@@ -32,42 +103,12 @@ body {
 .slide {
     width: 100vw;
     height: 100%;
+    scroll-snap-align: start;
 }
 
 .card-outer {
     width: fit-content;
     margin: auto;
-}
-
-.coffee-card h3 {
-    font-size: 2rem;
-    width: 300px;
-    height: 40px;
-    padding: 10px;
-    text-align: center;
-}
-
-.coffee-card p {
-    padding: 40px;
-}
-
-.coffee-card h3,
-.coffee-card p {
-    border: 3px solid #e6ff00;
-    background-color: white;
-}
-
-.front, 
-.back,
-.coffee-card {
-    margin: auto;
-    background-color: #EFEFE7;
-    border-radius: 15px;
-    box-shadow: 
-    2px -2px 2px -0.5px #D0CCC1 inset,
-    2px 3px 1px #FBFAF8 inset,
-    10px 10px 15px 1px black;
-    color: #1e0f02;
 }
 
 .coffee-card.one {
@@ -112,6 +153,7 @@ body {
     margin-left: 15px;
     opacity: 0;
     transition: opacity 0.5s;
+    text-decoration: none;
 }
 
 .marker:hover {
@@ -120,6 +162,10 @@ body {
 
 .marker:hover a {
     opacity: 1;
+}
+
+a:hover {
+    color: #8a89c0;
 }
 
 .sa {
@@ -150,18 +196,18 @@ body {
 }
 
 .eth {
-    top: 315px;
-    right: 290px;
+    top: 280px;
+    right: 295px;
 }
 
 .ug {
-    top: 340px;
+    top: 320px;
     right: 310px;
 }
 
 .ind {
-    top: 190px;
-    right: 200px;
+    top: 210px;
+    right: 240px;
 }
 
 .vie {
@@ -170,8 +216,8 @@ body {
 }
 
 .indo {
-    top: 280px;
-    right: 210px;
+    top: 290px;
+    right: 190px;
 }
 
 

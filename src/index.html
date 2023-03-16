@@ -29,31 +29,6 @@
         <div class="light" id="light">
         </div>
 
-        <!-- handle knob events -->
-        <script type="text/javascript">
-            const knob = document.getElementById('knob');
-            const light = document.getElementById('light');
-            const icons = document.getElementsByClassName('head-icon');
-
-            knob.addEventListener('focusin', () => {
-                light.style.animation = 'none';
-                light.style.backgroundImage = 'radial-gradient(#e6ff00, #ebf777)';
-                light.style.boxShadow = '0 0 5px 2px #e5ff00, 0.5px 0.5px 2px 0.25px #E1D8D1 inset, 0 1px 2px 0.5px black';
-                for (let i =0; i < icons.length; i ++) {
-                    icons[i].style.animation = 'light 0.4s ease-out 0s 1 reverse both';
-                };
-            })
-
-            knob.addEventListener('focusout', () => {
-                light.style.animation = 'blink 5s infinite';
-                light.style.backgroundImage = 'none';
-                light.style.boxShadow = '0.5px 0.5px 2px 0.25px #E1D8D1 inset, 0 1px 2px 0.5px black';
-                for (let i = 0; i < icons.length; i++) {
-                    icons[i].style.animation = 'light 0.4s ease-out 0s 1 normal both';
-                };
-            })
-        </script>
-
         <div class="heads-container">
             <div class="head">
                 <div class="head-icons">
@@ -83,19 +58,6 @@
                 </div>
             </div>
 
-            <script type="text/javascript">
-                const headButtons = document.getElementsByClassName('head-button');
-                let currentIcon;
-
-                const handleHeadClick = () => {
-                    currentIcon.style.color = 'red';
-                }
-                
-                for (let i = 0; i < headButtons.length; i++) {
-                    currentIcon = icons[i];
-                    headButtons[i].addEventListener('click', handleHeadClick());
-                }
-            </script>
         </div>
 
         <div class="screen-container">
@@ -107,81 +69,56 @@
                 </nav>
                 <p id="clock" onload="showTime()"></p>
 
-                <!-- Clock and screen events -->
-                <script type="text/javascript">
-                    function showTime() {
-                        var today = new Date();
-                        var y = today.getFullYear();
-                        var mo = (today.getMonth() + 1);
-                        var d = today.getDate();
-                        var h = today.getHours(); // 0 - 23
-                        var m = today.getMinutes(); // 0 - 59
-                        var s = today.getSeconds(); // 0 - 59
-
-                        mo = (mo < 10) ? "0" + mo : mo;
-                        d = (d < 10) ? "0" + d : d;
-
-                        h = (h < 10) ? "0" + h : h;
-                        m = (m < 10) ? "0" + m : m;
-                        s = (s < 10) ? "0" + s : s;
-
-                        var time = d + "/" + mo + "/" + y + " " + h + ":" + m + ":" + s;
-                        document.getElementById("clock").innerText = time;
-                        document.getElementById("clock").textContent = time;
-
-                        setTimeout(showTime, 1000);
-                    }
-
-                    showTime();
-
-                    let btn = document.querySelector('.gradient-tracking');
-                        btn.addEventListener('mousemove', e => {
-                            let rect = e.target.getBoundingClientRect();
-                            let x = e.clientX - rect.left;
-                            let y = e.clientY - rect.top;
-                            btn.style.setProperty('--x', x + 'px');
-                            btn.style.setProperty('--y', y + 'px');
-                        });
-                </script>
             </div>
         </div>
     </div>
 </header>
 <main>
-    <div class="slideshow-container">
-    <div class="slideshow">
+
+    <div class="about-coffea card hidden" id="first-card">
+        <img src="./media/flower.png" alt="coffee flower" class="flower">
+        <img src="./media/cherries.png" alt="coffee 'cherries'; fruit" class="cherries">
+        <h3>The Plant</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed 
+        ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam 
+        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+        voluptatem sequi nesciunt.</p>
+    </div>
+    <div class="slideshow-container hidden" id="slideshow-container">
+    <div class="slideshow" id="slideshow">
         <div class="slide">
             <div class="card-outer">
                 <div class="coffee-card one">
-                    <div class="front">
+                    <div class="front card">
                         <h3 class="right">The Origin</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                            sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
-                    <div class="back">
+                    <div class="back card">
                         <h3>Top 8 Coffee Producers</h3>
-                        <div class="marker hon sa"><a>Honduras</a></div>
-                        <div class="marker col sa"><a>Colombia</a></div>
-                        <div class="marker braz sa"><a>Brazil</a></div>
+                        <div class="marker hon sa"><a href="https://en.wikipedia.org/wiki/Coffee_production_in_Honduras" target="_blank">Honduras</a></div>
+                        <div class="marker col sa"><a href="https://en.wikipedia.org/wiki/Coffee_production_in_Colombia" target="_blank">Colombia</a></div>
+                        <div class="marker braz sa"><a href="https://en.wikipedia.org/wiki/Coffee_production_in_Brazil" target="_blank">Brazil</a></div>
 
-                        <div class="marker eth af"><a>Ethiopia</a></div>
-                        <div class="marker ug af"><a>Uganda</a></div>
+                        <div class="marker eth af"><a href="https://en.wikipedia.org/wiki/Coffee_production_in_Ethiopia" target="_blank">Ethiopia</a></div>
+                        <div class="marker ug af"><a href="https://en.wikipedia.org/wiki/Coffee_production_in_Uganda" target="_blank">Uganda</a></div>
 
-                        <div class="marker ind as"><a>India</a></div>
-                        <div class="marker vie as"><a>Vietnam</a></div>
-                        <div class="marker indo as"><a>Indonesia</a></div>
+                        <div class="marker ind as"><a href="https://en.wikipedia.org/wiki/Coffee_production_in_India" target="_blank">India</a></div>
+                        <div class="marker vie as"><a href="https://en.wikipedia.org/wiki/Coffee_production_in_Vietnam" target="_blank">Vietnam</a></div>
+                        <div class="marker indo as"><a href="https://en.wikipedia.org/wiki/Coffee_production_in_Indonesia" target="_blank">Indonesia</a></div>
                     </div>
                 </div>
             </div>
             
         </div>
         <div class="slide">
-        <div class="coffee-card two">
+        <div class="card coffee-card two">
             <h3>The Blend</h3>
             <p class="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
@@ -191,7 +128,7 @@
         </div>
 
         <div class="slide">
-            <div class="coffee-card three">
+            <div class="card coffee-card three">
                 <h3>The Process</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua. </p> 
@@ -202,40 +139,131 @@
             </div>
         </div>
         <div class="slide">
-            <div class="coffee-card four">
+            <div class="card coffee-card four">
                 <h3>The Grind</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </div>
         
         <div class="slide">
-            <div class="coffee-card five">
+            <div class="card coffee-card five">
                 <h3>The Brew</h3>
                 <p class="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna
-                    aliqua.</p>
-                <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
                     aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
                     occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </div>
         
         <div class="slide">
-            <div class="coffee-card six">
+            <div class="card coffee-card six">
                 <h3>The Coffee</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
             </div>
         </div>
     </div>
     </div>
 </main>
+
+<!-- handle knob events -->
+<script type="text/javascript">
+    const knob = document.getElementById('knob');
+    const light = document.getElementById('light');
+    const icons = document.getElementsByClassName('head-icon');
+    const firstCard = document.getElementById('first-card');
+
+    const iconsOn = () => {
+        for (let i = 0; i < icons.length; i++) {
+            icons[i].style.animation = 'light 0.4s ease-out 0s 1 normal both';
+        };
+    }
+
+    const iconsOff = () => {
+        for (let i = 0; i < icons.length; i++) {
+            icons[i].style.animation = 'light 0.4s ease-out 0s 1 reverse both';
+        };
+    }
+
+    knob.addEventListener('focusin', () => {
+        light.style.animation = 'none';
+        light.style.backgroundImage = 'radial-gradient(#e6ff00, #ebf777)';
+        light.style.boxShadow = '0 0 5px 2px #e5ff00, 0.5px 0.5px 2px 0.25px #E1D8D1 inset, 0 1px 2px 0.5px black';
+        iconsOff();
+
+        firstCard.classList.remove('hidden');
+    })
+
+    knob.addEventListener('focusout', () => {
+        light.style.animation = 'blink 5s infinite';
+        light.style.backgroundImage = 'none';
+        light.style.boxShadow = '0.5px 0.5px 2px 0.25px #E1D8D1 inset, 0 1px 2px 0.5px black';
+        iconsOn();
+
+        firstCard.classList.add('hidden');
+    })
+</script>
+
+<!-- handle head buttons -->
+<script type="text/javascript">
+    const headButtons = document.getElementsByClassName('head-button');
+    const slideshow = document.getElementById('slideshow-container');
+    const slides = document.getElementsByClassName('slide');
+
+    const handleHeadButton = id => {
+        iconsOff();
+        icons[id].style.animation = 'light 0.4s ease-out 0s 1 normal both';
+        slideshow.classList.remove('hidden');
+        slides[id].scrollIntoView();
+    }
+
+    for (let i = 0; i < headButtons.length; i++) {
+        headButtons[i].addEventListener('click', () => handleHeadButton(i));
+    };
+
+</script>
+
+<!-- clock and screen events -->
+<script type="text/javascript">
+    function showTime() {
+        var today = new Date();
+        var y = today.getFullYear();
+        var mo = (today.getMonth() + 1);
+        var d = today.getDate();
+        var h = today.getHours(); // 0 - 23
+        var m = today.getMinutes(); // 0 - 59
+        var s = today.getSeconds(); // 0 - 59
+
+        mo = (mo < 10) ? "0" + mo : mo;
+        d = (d < 10) ? "0" + d : d;
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+
+        var time = d + "/" + mo + "/" + y + " " + h + ":" + m + ":" + s;
+        document.getElementById("clock").innerText = time;
+        document.getElementById("clock").textContent = time;
+
+        setTimeout(showTime, 1000);
+    }
+
+    showTime();
+
+    let btn = document.querySelector('.gradient-tracking');
+    btn.addEventListener('mousemove', e => {
+        let rect = e.target.getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.top;
+        btn.style.setProperty('--x', x + 'px');
+        btn.style.setProperty('--y', y + 'px');
+    });
+</script>
 </body>
 
 </html>
